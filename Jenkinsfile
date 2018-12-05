@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("/DsaicharanGoud/hello-world")
+        app = docker.build("/dsaicharangoud/hello-world")
     }
 
     stage('Test image') {
@@ -19,7 +19,7 @@ node {
          * Run a curl inside the newly-build Docker image */
 
         app.inside {
-            sh 'curl http://localhost:8000 || exit 1'
+            sh 'curl http://localhost:8080 || exit 1'
         }
     }
 
